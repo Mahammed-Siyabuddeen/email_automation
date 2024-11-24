@@ -15,7 +15,7 @@ async function generateMessage(message: string) {
                 "content": "You are a helpful assistant."
             },
             { role: 'user', content: `generate replay answer email label and body for these qestion :${message}` },],
-            model: 'cosmosrp',
+            model: process.env.OPENAI_MODEL_NAME as string,
         });
 
         return response['choices'][0]['message']['content'];
