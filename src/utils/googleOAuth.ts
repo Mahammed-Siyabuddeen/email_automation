@@ -17,7 +17,6 @@ export const googelAuth = async () => {
     try {
 
       const bufferData = await fs.readFile(`${process.cwd()}/gmail-token.json`)
-      console.log("Authorize this app by visiting this url:", authUrl);
 
       oauth2Client.credentials = JSON.parse(bufferData.toString());
     } catch (error) {
